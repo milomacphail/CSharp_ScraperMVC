@@ -127,33 +127,33 @@ namespace CSharp_Scraper.Controllers
         }
 
         public ActionResult Scrape()
-        {
-            var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
+       {
+           var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
 
-            scrape.Login();
-            scrape.Navigate();
-            scrape.ScrapeTable();
+           scrape.Login();
+           scrape.Navigate();
+           scrape.ScrapeTable();
 
-            return View();
-        }
+           return View();
+       }
 
-        /*public ActionResult DeleteTable()
-        {
+      /*public ActionResult DeleteTable()
+       {
 
-            using (SqlConnection con = new SqlConnection(_connection))
-            {
-                con.Open();
+           using (SqlConnection con = new SqlConnection(_connection))
+           {
+               con.Open();
 
-                if (con.State == System.Data.ConnectionState.Open)
-                {
-                    using (SqlCommand cmd = new SqlCommand(reseed, con))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                con.Close();
-            }
-        
-        }*/
+               if (con.State == System.Data.ConnectionState.Open)
+               {
+                   using (SqlCommand cmd = new SqlCommand(reseed, con))
+                   {
+                       cmd.ExecuteNonQuery();
+                   }
+               }
+               con.Close();
+           }
+
+       }*/
     }
 }

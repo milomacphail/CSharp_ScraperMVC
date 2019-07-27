@@ -334,6 +334,8 @@
     <Content Include="Views\StockTables\Details.cshtml" />
     <Content Include="Views\StockTables\Edit.cshtml" />
     <Content Include="Views\StockTables\Index.cshtml" />
+    <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\StockTables\Scrape.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
