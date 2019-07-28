@@ -5,10 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using System.Data.SqlClient;
-using CSharp_Scraper;
+
 
 namespace CSharp_Scraper.Controllers
 {
@@ -127,33 +125,25 @@ namespace CSharp_Scraper.Controllers
         }
 
         public ActionResult Scrape()
-       {
-           var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
+        {
+            var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
 
-           scrape.Login();
-           scrape.Navigate();
-           scrape.ScrapeTable();
+            scrape.Login();
+            scrape.Navigate();
+            scrape.ScrapeTable();
 
-           return View();
-       }
+            return RedirectToAction("Index");
+        }
 
-      /*public ActionResult DeleteTable()
-       {
+        public ActionResult DeleteTable()
+        {
+            string deleteQuery = "DELETE FROM StockTable;" + "DBCC CHECKIDENT (StockTable, RESEED, 0);";
 
-           using (SqlConnection con = new SqlConnection(_connection))
-           {
-               con.Open();
+            db.Database.ExecuteSqlCommand(deleteQuery);
 
-               if (con.State == System.Data.ConnectionState.Open)
-               {
-                   using (SqlCommand cmd = new SqlCommand(reseed, con))
-                   {
-                       cmd.ExecuteNonQuery();
-                   }
-               }
-               con.Close();
-           }
+            return RedirectToAction("Index");
 
-       }*/
+        }
+
     }
 }
