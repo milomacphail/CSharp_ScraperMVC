@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 
@@ -27,14 +28,14 @@ namespace CSharp_Scraper
 
         public DateTime TimeScraped { get => _timeScraped; set => _timeScraped = value; }
         public string StockSymbol { get => _stockSymbol; set => _stockSymbol = value; }
-        public string LastPrice { get => _lastPrice  ; set => _lastPrice = value; }
+        public string LastPrice { get => _lastPrice; set => _lastPrice = value; }
         public string Change { get => _change; set => _change = value; }
         public string ChangePercent { get => _changePercent; set => _changePercent = value; }
         public string Volume { get => _volume; set => _volume = value; }
-        public string Shares { get => _shares; set => _shares = value; } 
+        public string Shares { get => _shares; set => _shares = value; }
         public string AvgVol { get => _avgVol; set => _avgVol = value; }
         public string MarketCap { get => _marketCap; set => _marketCap = value; }
-        
+
 
         public Stock()
         {
@@ -69,4 +70,3 @@ namespace CSharp_Scraper
         }
     }
 }
-

@@ -11,18 +11,23 @@ namespace CSharp_Scraper
     class Scrape : Database
         {
             private string _id;
-    private string _pw;
-    public ChromeDriver driver;
+            private string _pw;
+            public ChromeDriver driver;
 
     public Scrape(string id, string pw)
     {
         this._id = id;
         this._pw = pw;
-        this.driver = new ChromeDriver();
-    }
+
+            ChromeOptions headlessDriver = new ChromeOptions();
+            headlessDriver.AddArgument("--headless");
+
+            this.driver = new ChromeDriver(headlessDriver);
+
+        }
 
 
-    public void Navigate()
+        public void Navigate()
 
     {
         //driver.Navigate().GoToUrl("https://finance.yahoo.com/portfolios");
@@ -57,14 +62,6 @@ namespace CSharp_Scraper
             IList <IWebElement> averageVolume_header = driver.FindElements(By.XPath("//*[@aria-label='Avg Vol (3m)']"));
             IList<IWebElement> marketCap_header = driver.FindElements(By.XPath("//*[@aria-label='Market Cap']"));
 
-            
-            /*var symbol = driver.FindElement(By.XPath("//*[@id=\"main\"]/section/section[2]/div[2]/table/tbody/tr[" + index + "]/td[1]/span/a")).GetAttribute("innerText");
-            var price = driver.FindElement(By.XPath("//*[@id=\"main\"]/section/section[2]/div[2]/table/tbody/tr[" + index + "]/td[2]/span")).GetAttribute("innerText");
-            var change = driver.FindElement(By.XPath("//*[@id=\"main\"]/section/section[2]/div[2]/table/tbody/tr[" + index + "]/td[3]/span")).GetAttribute("innerText");
-            var pchange = driver.FindElement(By.XPath("//*[@id=\"main\"]/section/section[2]/div[2]/table/tbody/tr[" + index + "]/td[4]/span")).GetAttribute("innerText");
-            var volume = driver.FindElement(By.XPath("//*[@id=\"main\"]/section/section[2]/div[2]/table/tbody/tr[" + index + "]/td[7]/span")).GetAttribute("innerText");
-            var marketcap = driver.FindElement(By.XPath("//*[@id=\"main\"]/section/section[2]/div[2]/table/tbody/tr[" + index + "]/td[13]/span")).GetAttribute("innerText");*/
-
             ScrapeData scrapeInstance = new ScrapeData(scrapeTime, stockSymbol_header, lastPrice_header, change_header, changePercent_header,
                 volume_header, shares_header, averageVolume_header, marketCap_header);
 
@@ -87,7 +84,7 @@ namespace CSharp_Scraper
                 List<string> avgVolumes = new List<string>();
                 List<string> mktCaps = new List<string>();
 
-                Stock stock = new Stock();
+            Stock stock = new Stock();
 
                 for (int index = 0; index < totalStocks; index++)
                 {
