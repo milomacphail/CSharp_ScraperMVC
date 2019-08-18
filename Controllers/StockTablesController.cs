@@ -124,6 +124,7 @@ namespace CSharp_Scraper.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
         public ActionResult Scrape()
         {
             var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
@@ -135,6 +136,7 @@ namespace CSharp_Scraper.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult DeleteTable()
         {
             string deleteQuery = "DELETE FROM StockTable;" + "DBCC CHECKIDENT (StockTable, RESEED, 0);";
@@ -145,5 +147,13 @@ namespace CSharp_Scraper.Controllers
 
         }
 
+        [Authorize]
+
+        public ActionResult MostRecentScrape()
+        {
+            string recentQuery = "SELECT time_scraped, MAX time_scraped FROM dbo.StockTable GROUP BY time_scraped";
+            db.Database.ExecuteSqlCommand(recentQuery);
+            return RedirectToAction("Index");
+        }
     }
 }
