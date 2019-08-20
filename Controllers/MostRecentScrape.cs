@@ -5,112 +5,113 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-
+using CSharp_Scraper;
 
 namespace CSharp_Scraper.Controllers
 {
-    public class StockTablesController : Controller
+    public class MostRecentScrape : Controller
     {
         private StockTableEntities db = new StockTableEntities();
 
-        // GET: StockTables
+        // GET: MostRecentScrape
         public async Task<ActionResult> Index()
         {
-            return View(await db.StockTables.ToListAsync());
+            return View(await db.StockModels.ToListAsync());
         }
 
-        // GET: StockTables/Details/5
+        // GET: MostRecentScrape/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StockTable stockTable = await db.StockTables.FindAsync(id);
-            if (stockTable == null)
+            StockModel stockModel = await db.StockModels.FindAsync(id);
+            if (stockModel == null)
             {
                 return HttpNotFound();
             }
-            return View(stockTable);
+            return View(stockModel);
         }
 
-        // GET: StockTables/Create
+        // GET: MostRecentScrape/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: StockTables/Create
+        // POST: MostRecentScrape/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Time_Scraped,Stock_Symbol,Last_Price,Change,Change_Percent,Volume,Shares,Average_Volume,Market_Cap")] StockTable stockTable)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Time_Scraped,Stock_Symbol,Last_Price,Change,Change_Percent,Volume,Shares,Average_Volume,Market_Cap")] StockModel stockModel)
         {
             if (ModelState.IsValid)
             {
-                db.StockTables.Add(stockTable);
+                db.StockModels.Add(stockModel);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(stockTable);
+            return View(stockModel);
         }
 
-        // GET: StockTables/Edit/5
+        // GET: MostRecentScrape/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StockTable stockTable = await db.StockTables.FindAsync(id);
-            if (stockTable == null)
+            StockModel stockModel = await db.StockModels.FindAsync(id);
+            if (stockModel == null)
             {
                 return HttpNotFound();
             }
-            return View(stockTable);
+            return View(stockModel);
         }
 
-        // POST: StockTables/Edit/5
+        // POST: MostRecentScrape/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Time_Scraped,Stock_Symbol,Last_Price,Change,Change_Percent,Volume,Shares,Average_Volume,Market_Cap")] StockTable stockTable)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Time_Scraped,Stock_Symbol,Last_Price,Change,Change_Percent,Volume,Shares,Average_Volume,Market_Cap")] StockModel stockModel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(stockTable).State = EntityState.Modified;
+                db.Entry(stockModel).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(stockTable);
+            return View(stockModel);
         }
 
-        // GET: StockTables/Delete/5
+        // GET: MostRecentScrape/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StockTable stockTable = await db.StockTables.FindAsync(id);
-            if (stockTable == null)
+            StockModel stockModel = await db.StockModels.FindAsync(id);
+            if (stockModel == null)
             {
                 return HttpNotFound();
             }
-            return View(stockTable);
+            return View(stockModel);
         }
 
-        // POST: StockTables/Delete/5
+        // POST: MostRecentScrape/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            StockTable stockTable = await db.StockTables.FindAsync(id);
-            db.StockTables.Remove(stockTable);
+            StockModel stockModel = await db.StockModels.FindAsync(id);
+            db.StockModels.Remove(stockModel);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -122,38 +123,6 @@ namespace CSharp_Scraper.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        [Authorize]
-        public ActionResult Scrape()
-        {
-            var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
-
-            scrape.Login();
-            scrape.Navigate();
-            scrape.ScrapeTable();
-
-            return RedirectToAction("Index");
-        }
-
-        [Authorize]
-        public ActionResult DeleteTable()
-        {
-            string deleteQuery = "DELETE FROM StockTable;" + "DBCC CHECKIDENT (StockTable, RESEED, 0);";
-
-            db.Database.ExecuteSqlCommand(deleteQuery);
-
-            return RedirectToAction("Index");
-
-        }
-
-        [Authorize]
-
-        public ActionResult MostRecentScrape()
-        {
-            string recentQuery = "SELECT Id, MAX (time_scraped) FROM dbo.StockTable GROUP BY Id";
-            db.Database.ExecuteSqlCommand(recentQuery);
-            return RedirectToAction("Index");
         }
     }
 }

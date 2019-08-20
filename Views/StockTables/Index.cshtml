@@ -12,6 +12,10 @@
     <title>Stock Table</title>
 </head>
 <body>
+    <div class="col-md-4">
+        <h2>Delete Database</h2>
+        <button type="submit" class="btn btn-info" value="Most Recent Scrape" onclick="location.href='@Url.Action("MostRecentScrape", "StockTables")'">Latest Scrape Data</button>
+    </div>
     <table class="table">
         <tr>
             <th>
@@ -43,42 +47,43 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time_Scraped)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock_Symbol)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Last_Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Change)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Change_Percent)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Volume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Shares)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Average_Volume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Market_Cap)
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time_Scraped)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock_Symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Last_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Change)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Change_Percent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Volume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shares)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Average_Volume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Market_Cap)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

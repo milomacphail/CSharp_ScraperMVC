@@ -183,6 +183,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MostRecentScrape.cs" />
     <Compile Include="Controllers\StockTablesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -336,6 +337,11 @@
     <Content Include="Views\StockTables\Index.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\StockTables\Scrape.cshtml" />
+    <Content Include="Views\MostRecentScrape\Create.cshtml" />
+    <Content Include="Views\MostRecentScrape\Delete.cshtml" />
+    <Content Include="Views\MostRecentScrape\Details.cshtml" />
+    <Content Include="Views\MostRecentScrape\Edit.cshtml" />
+    <Content Include="Views\MostRecentScrape\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
