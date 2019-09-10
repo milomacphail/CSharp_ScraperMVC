@@ -26,5 +26,7 @@ namespace CSharp_Scraper
         }
     
         public virtual DbSet<StockTable> StockTables { get; set; }
+
+        public System.Data.Entity.DbSet<CSharp_Scraper.StockModel> StockModels { get; set; }
     }
 }

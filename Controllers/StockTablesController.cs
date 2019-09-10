@@ -14,13 +14,11 @@ namespace CSharp_Scraper.Controllers
     {
         private StockTableEntities db = new StockTableEntities();
 
-        // GET: StockTables
         public async Task<ActionResult> Index()
         {
             return View(await db.StockTables.ToListAsync());
         }
 
-        // GET: StockTables/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,15 +33,11 @@ namespace CSharp_Scraper.Controllers
             return View(stockTable);
         }
 
-        // GET: StockTables/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: StockTables/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Time_Scraped,Stock_Symbol,Last_Price,Change,Change_Percent,Volume,Shares,Average_Volume,Market_Cap")] StockTable stockTable)
@@ -58,7 +52,6 @@ namespace CSharp_Scraper.Controllers
             return View(stockTable);
         }
 
-        // GET: StockTables/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,9 +66,6 @@ namespace CSharp_Scraper.Controllers
             return View(stockTable);
         }
 
-        // POST: StockTables/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Time_Scraped,Stock_Symbol,Last_Price,Change,Change_Percent,Volume,Shares,Average_Volume,Market_Cap")] StockTable stockTable)
@@ -89,7 +79,6 @@ namespace CSharp_Scraper.Controllers
             return View(stockTable);
         }
 
-        // GET: StockTables/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -104,7 +93,6 @@ namespace CSharp_Scraper.Controllers
             return View(stockTable);
         }
 
-        // POST: StockTables/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
@@ -151,7 +139,7 @@ namespace CSharp_Scraper.Controllers
 
         public ActionResult MostRecentScrape()
         {
-            string recentQuery = "SELECT time_scraped, MAX time_scraped FROM dbo.StockTable GROUP BY time_scraped";
+            string recentQuery = "SELECT Id, MAX (time_scraped) FROM dbo.StockTable GROUP BY Id";
             db.Database.ExecuteSqlCommand(recentQuery);
             return RedirectToAction("Index");
         }

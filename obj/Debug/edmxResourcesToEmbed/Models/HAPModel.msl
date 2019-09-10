@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HAPStockTableModelStoreContainer" CdmEntityContainer="HAPStockTableEntities">
+    <EntitySetMapping Name="HAPStockTables">
+      <EntityTypeMapping TypeName="HAPStockTableModel.HAPStockTable">
+        <MappingFragment StoreEntitySet="HAPStockTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Time_Scraped" ColumnName="Time_Scraped" />
+          <ScalarProperty Name="Stock_Symbol" ColumnName="Stock_Symbol" />
+          <ScalarProperty Name="Last_Price" ColumnName="Last_Price" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="Change_Percent" ColumnName="Change_Percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

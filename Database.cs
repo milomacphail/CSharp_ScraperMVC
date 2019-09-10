@@ -52,13 +52,13 @@ namespace CSharp_Scraper
 
             private static void LastScrapeToDatabase(Stock stock)
             {
-                string lastScrape = @"IF EXISTS(SELECT* FROM LastTable WHERE Stock_Symbol = @stock_symbol)
-                                    UPDATE LastTable
+                string lastScrape = @"IF EXISTS(SELECT* FROM dbo.LastTable WHERE Stock_Symbol = @stock_symbol)
+                                    UPDATE dbo.LastTable
                                     SET Time_Scraped = @time_scraped, Last_Price = @last_price, Change = @Change, Change_Percent = @change_percent,
                                     Volume = @volume, Shares = @shares, Average_Volume = @average_volume, Market_Cap = @market_cap
                                     WHERE Stock_Symbol = @stock_symbol
                                 ELSE 
-                                    INSERT INTO LastTable VALUES (@time_scraped, @stock_symbol, @last_price, @change, @change_percent, @volume, @shares, @average_volume, @market_cap);";
+                                    INSERT INTO dbo.LastTable VALUES (@time_scraped, @stock_symbol, @last_price, @change, @change_percent, @volume, @shares, @average_volume, @market_cap);";
 
                 using (SqlConnection db = new SqlConnection(_connection))
                 {
@@ -93,11 +93,6 @@ namespace CSharp_Scraper
                     db.Close();
                 }
             }
-
-            /*string[] stockFields = { "@time_scraped", "@stock_symbol", "@last_price", "@change", "@change_percent", "@volume", "@shares", "@average_volume", "@market_cap" };
-
-            string[] stockData = { System.Convert.ToString(DateTime.Now), "TEST", "$", "1", "1%", "2", "2", "2", "2" };*/
-
             private static void DataToTable(Stock stock)
             {
 
