@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
@@ -91,4 +92,99 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams></Diagrams>
   </Designer>
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StockTableModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="StockTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Time_Scraped" Type="datetime2" Precision="7" />
+          <Property Name="Stock_Symbol" Type="nchar" MaxLength="10" />
+          <Property Name="Last_Price" Type="nchar" MaxLength="10" />
+          <Property Name="Change" Type="nchar" MaxLength="10" />
+          <Property Name="Change_Percent" Type="nchar" MaxLength="10" />
+          <Property Name="Volume" Type="nchar" MaxLength="10" />
+          <Property Name="Shares" Type="nchar" MaxLength="10" />
+          <Property Name="Average_Volume" Type="nchar" MaxLength="10" />
+          <Property Name="Market_Cap" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="StockTableModelStoreContainer">
+          <EntitySet Name="StockTable" EntityType="Self.StockTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StockTableModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="StockTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Time_Scraped" Type="DateTime" Precision="7" />
+          <Property Name="Stock_Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Last_Price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Change" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Change_Percent" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Volume" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Shares" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Average_Volume" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Market_Cap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="StockTableEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="StockTables" EntityType="Self.StockTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StockTableModelStoreContainer" CdmEntityContainer="StockTableEntities">
+          <EntitySetMapping Name="StockTables">
+            <EntityTypeMapping TypeName="StockTableModel.StockTable">
+              <MappingFragment StoreEntitySet="StockTable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Time_Scraped" ColumnName="Time_Scraped" />
+                <ScalarProperty Name="Stock_Symbol" ColumnName="Stock_Symbol" />
+                <ScalarProperty Name="Last_Price" ColumnName="Last_Price" />
+                <ScalarProperty Name="Change" ColumnName="Change" />
+                <ScalarProperty Name="Change_Percent" ColumnName="Change_Percent" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Shares" ColumnName="Shares" />
+                <ScalarProperty Name="Average_Volume" ColumnName="Average_Volume" />
+                <ScalarProperty Name="Market_Cap" ColumnName="Market_Cap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+>>>>>>> 961900145e26f7e80545174cdae75294aee15081
 </edmx:Edmx>
