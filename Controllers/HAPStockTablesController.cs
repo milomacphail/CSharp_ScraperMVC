@@ -126,13 +126,10 @@ namespace CSharp_Scraper.Controllers
         }
 
         [Authorize]
-        public ActionResult Scrape()
+        public ActionResult HAPScrape()
         {
-            var scrape = new Scrape("milomacphail@gmail.com", "Pandahead1");
-
-            scrape.Login();
-            scrape.Navigate();
-            scrape.ScrapeTable();
+            HAPScrape scrape = new HAPScrape();
+            scrape.Scrape();
 
             return RedirectToAction("Index");
         }
@@ -148,7 +145,5 @@ namespace CSharp_Scraper.Controllers
             return RedirectToAction("Index");
 
         }
-
-
     }
 }

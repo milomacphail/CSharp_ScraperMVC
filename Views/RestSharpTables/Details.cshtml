@@ -1,0 +1,66 @@
+﻿@model CSharp_Scraper.Models.RestSharpTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>RestSharpTable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TimeScraped)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TimeScraped)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Symbol)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Symbol)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LastPrice)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LastPrice)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Change)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Change)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ChangePercent)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ChangePercent)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

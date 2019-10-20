@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestSharpTableModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="RestSharpTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeScraped" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Symbol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastPrice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Change" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ChangePercent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="RestSharpTableEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RestSharpTables" EntityType="Self.RestSharpTable" />
+  </EntityContainer>
+</Schema>

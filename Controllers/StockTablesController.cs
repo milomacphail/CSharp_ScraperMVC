@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web.Mvc;
 
-
 namespace CSharp_Scraper.Controllers
 {
     public class StockTablesController : Controller
@@ -132,7 +131,6 @@ namespace CSharp_Scraper.Controllers
             db.Database.ExecuteSqlCommand(deleteQuery);
 
             return RedirectToAction("Index");
-
         }
 
         [Authorize]

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RestSharpTableModelStoreContainer" CdmEntityContainer="RestSharpTableEntities">
+    <EntitySetMapping Name="RestSharpTables">
+      <EntityTypeMapping TypeName="RestSharpTableModel.RestSharpTable">
+        <MappingFragment StoreEntitySet="RestSharpTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeScraped" ColumnName="TimeScraped" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="LastPrice" ColumnName="LastPrice" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="ChangePercent" ColumnName="ChangePercent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HTMLAPScraper
+namespace CSharp_Scraper
 {
     public class HAPStock
     {
@@ -10,7 +10,6 @@ namespace HTMLAPScraper
         private string _lastPrice;
         private string _change;
         private string _changePercent;
-
 
         public System.DateTime TimeScraped { get => _timeScraped; set => _timeScraped = value; }
         public string StockSymbol { get => _stockSymbol; set => _stockSymbol = value; }
