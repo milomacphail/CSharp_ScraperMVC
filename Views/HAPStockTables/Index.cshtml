@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<CSharp_Scraper.Models.HAPStockTable>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Home Page";
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Nasdaq Scrape History Table</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <div class="col-md-4">
+        <h2>Most Recent Database Scrape</h2>
+        <button type="submit" class="btn btn-info" value="Most Recent Scrape" onclick="location.href='@Url.Action("MostRecentScrape", "HAPStockTables")'">Latest Scrape Data</button>
+    </div>
     <table class="table">
         <tr>
             <th>
@@ -34,32 +34,31 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time_Scraped)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock_Symbol)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Last_Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Change)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Change_Percent)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time_Scraped)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock_Symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Last_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Change)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Change_Percent)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

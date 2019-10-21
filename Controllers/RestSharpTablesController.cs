@@ -132,7 +132,16 @@ namespace CSharp_Scraper.Controllers
             newScrape.RestScrape();
 
             return RedirectToAction("Index");
+        }
 
+        [Authorize]
+        public ActionResult DeleteTable()
+        {
+            string deleteQuery = "DELETE FROM RestSharpTable;" + "DBCC CHECKIDENT (RestSharpTable, RESEED, 0);";
+
+            db.Database.ExecuteSqlCommand(deleteQuery);
+
+            return RedirectToAction("Index");
 
         }
     }
