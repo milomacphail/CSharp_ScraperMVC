@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
@@ -10,17 +9,4 @@
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
- <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <!-- Diagram content (shape and connector positions) -->
-    <edmx:Diagrams>
-      <Diagram DiagramId="280769b5599f4d9da021b0eb86221517" Name="Diagram1">
-        <EntityTypeShape EntityType="StockTableModel.StockTable" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-      </Diagram>
-    </edmx:Diagrams>
-  </edmx:Designer>
->>>>>>> 961900145e26f7e80545174cdae75294aee15081
 </edmx:Edmx>

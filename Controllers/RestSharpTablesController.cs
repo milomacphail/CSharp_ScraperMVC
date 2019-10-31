@@ -125,7 +125,7 @@ namespace CSharp_Scraper.Controllers
             base.Dispose(disposing);
         }
 
-
+        [Authorize]
         public ActionResult NewApiCall()
         {
             ApiCall newScrape = new ApiCall();

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
 <#@ include file="EF6.Utility.CS.ttinclude"#><#@
  output extension=".cs"#><#
 
@@ -1270,5 +1269,3 @@ public static void ArgumentNotNull<T>(T arg, string name) where T : class
         throw new ArgumentNullException(name);
     }
 }
->>>>>>> 961900145e26f7e80545174cdae75294aee15081
-#>
