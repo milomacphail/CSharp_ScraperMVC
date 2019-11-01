@@ -112,3 +112,4 @@ C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.Ent
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csproj.CopyComplete
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.dll
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.pdb
+C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csprojAssemblyReference.cache
