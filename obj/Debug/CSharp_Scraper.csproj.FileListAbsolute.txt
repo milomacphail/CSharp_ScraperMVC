@@ -1,4 +1,3 @@
-C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csproj.CoreCompileInputs.cache
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\CSharp_Scraper.dll.config
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\CSharp_Scraper.dll
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\CSharp_Scraper.pdb
@@ -85,6 +84,9 @@ C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\EntityFramework.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\EntityFramework.SqlServer.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\HtmlAgilityPack.pdb
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\HtmlAgilityPack.xml
+C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.Owin.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.Owin.Host.SystemWeb.xml
@@ -106,10 +108,8 @@ C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\System.Web.WebPages.Razor.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\WebDriver.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\WebDriver.Support.xml
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Antlr3.Runtime.pdb
-C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\milom\Documents\GitHub\CSharp_Scraper\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csprojAssemblyReference.cache
+C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csproj.CoreCompileInputs.cache
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csproj.CopyComplete
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.dll
 C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.pdb
-C:\Users\milom\Documents\GitHub\CSharp_Scraper\obj\Debug\CSharp_Scraper.csprojAssemblyReference.cache

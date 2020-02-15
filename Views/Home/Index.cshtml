@@ -2,24 +2,25 @@
     ViewBag.Title = "Home Page";
 }
     <div class="jumbotron">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <div class="col-md-2">
-                    <button class="btn btn-success btn-block" value="Scrape Stocks" onclick="location.href='@Url.Action("Scrape", "StockTables")'">Scrape Yahoo Finance</button>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-danger btn-block" value="Delete Stocks" onclick="location.href='@Url.Action("DeleteTable", "StockTables")'">Delete Yahoo Finance Database</button>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-success btn-block" value="Scrape Stocks" onclick="location.href='@Url.Action("HAPScrape", "HAPStockTables")'">Scrape Google Finance</button>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-danger btn-block" value="Delete Stocks" onclick="location.href='@Url.Action("DeleteTable", "HAPStockTables")'">Delete Google Database</button>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-success btn-block" value="Scrape Stocks" onclick="location.href='@Url.Action("NewApiCall", "RestSharpTables")'">Scrape MorningStar</button>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-danger btn-block" value="Delete Stocks" onclick="location.href='@Url.Action("DeleteTable", "RestSharpTables")'">Delete MorningStar Database</button>
-                </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <div class="col-md-6">
+                <h6 class="d-flex justify-content-center">Yahoo Finance</h6>
+                <button class="btn btn-success btn-block" value="Scrape Stocks" onclick="location.href='@Url.Action("Scrape", "StockTables")'">Scrape HTML</button>
+                <button type="submit" class="btn btn-danger btn-block" value="Delete Stocks" onclick="location.href='@Url.Action("DeleteTable", "StockTables")'">Delete Database</button>
             </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-6">
+                <h6 class="d-flex justify-content-center">Google Finance</h6>
+                <button class="btn btn-success btn-block" value="Scrape Stocks" onclick="location.href='@Url.Action("HAPScrape", "HAPStockTables")'">Scrape HTML</button>
+                <button type="submit" class="btn btn-danger btn-block" value="Delete Stocks" onclick="location.href='@Url.Action("DeleteTable", "HAPStockTables")'">Delete Database</button>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-6">
+                <h6 class="d-flex justify-content-center">MorningStar Finance</h6>
+                <button class="btn btn-success btn-block" value="Scrape Stocks" onclick="location.href='@Url.Action("NewApiCall", "RestSharpTables")'">Scrape API</button>
+                <button type="submit" class="btn btn-danger btn-block" value="Delete Stocks" onclick="location.href='@Url.Action("DeleteTable", "RestSharpTables")'">Delete Database</button>
+            </div>
+        </div>
     </div>
