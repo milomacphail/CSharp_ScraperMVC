@@ -12,29 +12,29 @@ namespace CSharp_Scraper
     {
         public void Scrape()
         {
-            string wsjUrl = "https://www.wsj.com/market-data/stocks";
+            string url = "https://www.marketwatch.com/investing/index/comp?mod=us-markets";
 
 
             HtmlWeb webNav = new HtmlWeb();
-            HtmlDocument document = webNav.Load(wsjUrl);
+            HtmlDocument document = webNav.Load(url);
 
-            HtmlNodeCollection dataTable = document.DocumentNode.SelectNodes("//*[@id='root']/div/div/div/div[2]/div[4]/div/div[1]/div[3]/div/div[1]/div/table/tbody");
-            Console.WriteLine(dataTable);
+            HtmlNodeCollection stockTable = document.DocumentNode.SelectNodes("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody");
+            Console.WriteLine(stockTable);
 
             HAPStock stock;
 
             List<HAPStock> stockData = new List<HAPStock>();
 
-            foreach (var tableRow in dataTable)
+            foreach (var tableRow in stockTable)
             {
                 DateTime timeScraped = DateTime.Now;
-                string stockSymbol = tableRow.SelectSingleNode("/html/body/div[1]/div/div/div/div[2]/div[4]/div/div[1]/div[3]/div/div[1]/div/table/tbody/tr[1]/td[1]").InnerText;
+                string stockSymbol = tableRow.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[1]").InnerText;
                 Console.WriteLine(stockSymbol);
-                string lastPrice = tableRow.SelectSingleNode("//*[@id='root']/div/div/div/div[2]/div[4]/div/div[1]/div[3]/div/div[1]/div/table/tbody/tr[1]/td[2]").InnerText.Replace("&nbsp;", string.Empty);
+                string lastPrice = tableRow.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[2]").InnerText.Replace("&nbsp;", string.Empty);
                 Console.WriteLine(lastPrice);
-                string change = tableRow.SelectSingleNode("/html/body/div[1]/div/div/div/div[2]/div[4]/div/div[1]/div[3]/div/div[1]/div/table/tbody/tr[1]/td[3]").InnerText.Replace("&nbsp;", "").Replace(" ", "").Replace("&#9650;", " ");
+                string change = tableRow.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[3]").InnerText.Replace("&nbsp;", "").Replace(" ", "").Replace("&#9650;", " ");
                 Console.WriteLine(change);
-                string changePercent = tableRow.SelectSingleNode("/html/body/div[1]/div/div/div/div[2]/div[4]/div/div[1]/div[3]/div/div[1]/div/table/tbody/tr[1]/td[4]").InnerText;
+                string changePercent = tableRow.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[4]").InnerText;
                 Console.WriteLine(changePercent);
 
                 /*int changeLength = InitChange.Length;

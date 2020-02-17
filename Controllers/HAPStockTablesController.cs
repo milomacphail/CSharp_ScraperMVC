@@ -138,7 +138,7 @@ namespace CSharp_Scraper.Controllers
         [Authorize]
         public ActionResult DeleteTable()
         {
-            string deleteQuery = "DELETE FROM HAPStockTable;" + "DBCC CHECKIDENT (StockTable, RESEED, 0);";
+            string deleteQuery = "DELETE FROM HAPStockTable;" + "DBCC CHECKIDENT (HAPStockTable, RESEED, 0);";
 
             db.Database.ExecuteSqlCommand(deleteQuery);
 
